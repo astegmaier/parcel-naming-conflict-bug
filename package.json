@@ -6,5 +6,11 @@
         "consumer",
         "test-library-parcel",
         "test-library-tsc"
-    ]
+    ],
+    "scripts": {
+        "clean": "yarn workspace test-library-parcel clean && yarn workspace test-library-tsc clean",
+        "build": "yarn workspace test-library-parcel build && yarn workspace test-library-tsc build",
+        "rebuild": "yarn workspace test-library-parcel rebuild && yarn workspace test-library-tsc rebuild",
+        "start": "yarn workspace consumer start"
+    }
 }
