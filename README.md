@@ -65,7 +65,7 @@ Interestingly, if you switch the order of the exports in `index.ts`, you'll get 
 ***index.ts***
 ```typescript
 export * from "./name-conflict"; // Note: this comes _before_ the top-level export below, which fixes the problem.
-export const nameConflict = { messageFromIndex: "this instance of nameConflict2 is from index.ts" };
+export const nameConflict = { messageFromIndex: "this instance of nameConflict is from index.ts" };
 ```
 
 If you build the same project with `tsc` directly, the `.d.ts` files generated will correctly describe the package, regardless of the order of the exports (although  it looks slightly different from what you'd expect from parcel because `tsc` can't bundle the `.d.ts` files for commonjs projects.
