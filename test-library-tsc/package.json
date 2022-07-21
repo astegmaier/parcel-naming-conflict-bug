@@ -1,0 +1,15 @@
+{
+    "name": "test-library-tsc",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "rebuild": "yarn clean && yarn build",
+        "build": "tsc",
+        "clean": "rimraf dist"
+    },
+    "main": "./dist/index.js",
+    "devDependencies": {
+        "typescript": "^4.7.4",
+        "rimraf": "^3.0.2"
+    }
+}

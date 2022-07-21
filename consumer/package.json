@@ -1,0 +1,17 @@
+{
+    "name": "consumer",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "start": "ts-node ./src/index.ts"
+    },
+    "dependencies": {
+        "test-library-parcel": "1.0.0",
+        "test-library-tsc": "1.0.0"
+    },
+    "devDependencies": {
+        "ts-node": "^10.9.1",
+        "rimraf": "3.0.2",
+        "typescript": "^4.7.4"
+    }
+}

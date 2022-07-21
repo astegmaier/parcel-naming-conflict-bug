@@ -1,0 +1,10 @@
+{
+    "name": "parcel-naming-conflict-bug",
+    "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "consumer",
+        "test-library-parcel",
+        "test-library-tsc"
+    ]
+}

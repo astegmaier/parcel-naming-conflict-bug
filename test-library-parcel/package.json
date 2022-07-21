@@ -1,0 +1,18 @@
+{
+  "name": "test-library-parcel",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "rebuild": "yarn clean && yarn build",
+    "build": "parcel build src/index.ts --cache-dir ./.parcel-cache",
+    "clean": "rimraf dist .parcel-cache"
+  },
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "devDependencies": {
+    "parcel": "^2.6.2",
+    "@parcel/transformer-typescript-types": "^2.6.2",
+    "@parcel/packager-ts": "^2.6.2",
+    "rimraf": "^3.0.2"
+  }
+}
