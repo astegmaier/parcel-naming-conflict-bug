@@ -1,6 +1,6 @@
 # parcel-naming-conflict-bug
 
-This repo illustrates a bug in `@parcel/transformer-typescript-types` related to the way it resolves name conflicts in the context of a project that contains wildcard exports (e.g. `export * from './foo'`).
+This repo illustrates a bug ([8331](https://github.com/parcel-bundler/parcel/issues/8331)) in `@parcel/transformer-typescript-types` related to the way it resolves name conflicts in the context of a project that contains wildcard exports (e.g. `export * from './foo'`).
 
 ## Repro steps
 
@@ -18,7 +18,7 @@ This repo illustrates a bug in `@parcel/transformer-typescript-types` related to
 ```
 ***src/index.ts***
 ```typescript
-export const nameConflict = { messageFromIndex: "this instance of nameConflict2 is from index.ts" };
+export const nameConflict = { messageFromIndex: "this instance of nameConflict is from index.ts" };
 export * from "./name-conflict"; // Note: this comes _after_ the top-level export above.
 ```
 
@@ -68,4 +68,4 @@ export * from "./name-conflict"; // Note: this comes _before_ the top-level expo
 export const nameConflict = { messageFromIndex: "this instance of nameConflict2 is from index.ts" };
 ```
 
-If you build the same project with `tsc` directly, the `.d.ts` files generated will correctly describe the package, reguardless of the order of the exports (although  it looks slightly different from what you'd expect from parcel because `tsc` can't bundle the `.d.ts` files for commonjs projects.
+If you build the same project with `tsc` directly, the `.d.ts` files generated will correctly describe the package, regardless of the order of the exports (although  it looks slightly different from what you'd expect from parcel because `tsc` can't bundle the `.d.ts` files for commonjs projects.
