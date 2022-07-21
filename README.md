@@ -68,4 +68,4 @@ export * from "./name-conflict"; // Note: this comes _before_ the top-level expo
 export const nameConflict = { messageFromIndex: "this instance of nameConflict is from index.ts" };
 ```
 
-If you build the same project with `tsc` directly, the `.d.ts` files generated will correctly describe the package, regardless of the order of the exports (although  it looks slightly different from what you'd expect from parcel because `tsc` can't bundle the `.d.ts` files for commonjs projects.
+If you build the same project with `tsc` directly, the `.d.ts` files generated will correctly describe the package, regardless of the order of the exports (although  it looks slightly different from what you'd expect from parcel because `tsc` can't bundle the `.d.ts` files for commonjs projects).
