@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "module": "commonjs" /* Specify what module code is generated. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "outDir": "dist" /* Specify the root directory of the output for generated declaration files. */,
+    "declaration": true /* Generates corresponding '.d.ts' file. */,
+  },
+  "include": ["src/**/*"]
+}

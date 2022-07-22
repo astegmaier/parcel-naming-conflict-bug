@@ -7,7 +7,8 @@
     },
     "dependencies": {
         "test-library-parcel": "1.0.0",
-        "test-library-tsc": "1.0.0"
+        "test-library-tsc": "1.0.0",
+        "test-library-namespaces-tsc": "1.0.0"
     },
     "devDependencies": {
         "ts-node": "^10.9.1",
