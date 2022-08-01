@@ -1,0 +1,1 @@
+export const nameConflict1 = { messageFromOther2: "this instance of nameConflict1 is from other1.ts" };

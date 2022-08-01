@@ -2,7 +2,13 @@
 
 This repo illustrates a bug ([8331](https://github.com/parcel-bundler/parcel/issues/8331)) in `@parcel/transformer-typescript-types` related to the way it resolves name conflicts in the context of a project that contains wildcard exports (e.g. `export * from './foo'`).
 
-## Repro steps
+## Repro Steps
+
+1. Clone the repo and run `yarn install`
+2. Build the library with `tsc` and `parcel` by running `yarn build`
+3. Run the tests in the "consumer" package by running `yarn test`. You can see the bug on lines 17-22 of `consumer/src/index.test.ts`.
+
+## Bug Description
 
 ***package.json***
 ```json
@@ -19,12 +25,12 @@ This repo illustrates a bug ([8331](https://github.com/parcel-bundler/parcel/iss
 ***src/index.ts***
 ```typescript
 export const nameConflict = { messageFromIndex: "this instance of nameConflict is from index.ts" };
-export * from "./name-conflict"; // Note: this comes _after_ the top-level export above.
+export * from "./other"; // Note: this comes _after_ the top-level export above.
 ```
 
-***src/name-conflict.ts***
+***src/other.ts***
 ```typescript
-export const nameConflict = { messageFromNameConflict: "this instance of nameConflict is from name-conflict.ts" };
+export const nameConflict = { messageFromNameConflict: "this instance of nameConflict is from other.ts" };
 ```
 
 ## Result
@@ -64,7 +70,7 @@ Interestingly, if you switch the order of the exports in `index.ts`, you'll get 
 
 ***index.ts***
 ```typescript
-export * from "./name-conflict"; // Note: this comes _before_ the top-level export below, which fixes the problem.
+export * from "./other"; // Note: this comes _before_ the top-level export below, which fixes the problem.
 export const nameConflict = { messageFromIndex: "this instance of nameConflict is from index.ts" };
 ```
 
