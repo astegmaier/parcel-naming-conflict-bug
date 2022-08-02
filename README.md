@@ -1,4 +1,4 @@
-# parcel-naming-conflict-bug
+# Namespace Imports Bug
 
 This repo illustrates a bug in `@parcel/transformer-typescript-types` related to the way it resolves name conflicts in the context of a project that contains namespace imports (e.g. `import * MyNamespace from './foo'`).
 
